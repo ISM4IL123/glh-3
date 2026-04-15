@@ -1,0 +1,118 @@
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #00b4d8;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Reduce motion for users preferring reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+.reduced-motion * {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
+.light-mode,
+.light-mode * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #333333 !important;
+}
+
+.light-mode button, 
+.light-mode input,
+.light-mode label,
+.light-mode a,
+.light-mode div {
+  border-color: #333333 !important;
+  color: #000000 !important;
+  background-color: #f5f5f5 !important;
+}
+
+/* High contrast mode support (optional enhancement) */
+@media (prefers-contrast: high) {
+  button, input {
+    border: 2px solid #000 !important;
+  }
+}
+
+/* Cart page button fixes - higher z-index, better spacing */
+.cart-page button {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.cart-page button[aria-label*="cart"],
+.cart-page button[aria-label*="Remove"],
+.cart-page button[aria-label*="Add"],
+.cart-page button[aria-label*="Proceed"] {
+  min-height: 44px !important;
+  margin: 2px !important; /* better touch targets */
+}
+
+/* Checkout button fix */
+.checkout-page button {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+/* Cart container - prevent TopBar overlap */
+.cart-page > div:first-child {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+}
+
+.light-mode ::selection {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Accessibility settings page theme support */
+.accessibility-settings {
+  background: rgba(0,0,0,0.9) !important;
+  color: #fff !important;
+}
+
+.light-mode .accessibility-settings {
+  background: #f5f5f5 !important;
+  color: #000 !important;
+}
+
+.reduced-motion .accessibility-settings *,
+.reduced-motion .accessibility-settings {
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+}
+
+.large-text {
+  font-size: 1.2rem !important;
+}
+
+.large-text .accessibility-settings {
+  font-size: 1.3rem !important;
+}
+
+
